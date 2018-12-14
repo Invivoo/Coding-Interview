@@ -5,14 +5,14 @@ import AceEditor from 'react-ace';
 import 'brace/mode/java';
 import 'brace/theme/github';
 
-interface AppProps {
+export interface AppProps {
 }
 
-interface AppState {
+export interface AppState {
   language: string;
 }
 
-class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {language: 'javascript'};
