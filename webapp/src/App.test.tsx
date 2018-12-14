@@ -25,5 +25,3 @@ test('selection change updates editor mode', () => {
 
     expect(aceEditor.props().mode).toBe('csharp');
 });
-
-
