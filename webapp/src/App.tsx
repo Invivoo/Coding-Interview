@@ -18,6 +18,9 @@ class App extends React.Component {
           showGutter={true}
           highlightActiveLine={true}
           editorProps={{$blockScrolling: true}}
+          width="100%"
+          height="100%"
+          style={{position: 'absolute'}}
           setOptions={{
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
