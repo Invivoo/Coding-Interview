@@ -3,7 +3,12 @@ import './App.css';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/java';
+import 'brace/mode/csharp';
+import 'brace/mode/python';
+import 'brace/mode/javascript';
+import 'brace/mode/typescript';
 import 'brace/theme/github';
+import 'brace/ext/language_tools';
 
 export interface AppProps {
 }
@@ -51,10 +56,9 @@ export class App extends React.Component<AppProps, AppState> {
           width="100%"
           height="100%"
           style={{position: 'absolute'}}
+          enableBasicAutocompletion={true}
+          enableLiveAutocompletion={true}
           setOptions={{
-                enableBasicAutocompletion: true,
-                enableLiveAutocompletion: true,
-                enableSnippets: false,
                 showLineNumbers: true,
                 tabSize: 2,
           }}
