@@ -15,3 +15,15 @@ test('ace mode mirrors selected language', () => {
     expect(aceEditor.props().mode).toBe('csharp');
 });
 
+test('selection change updates editor mode', () => {
+    const app = shallow(<App />);
+    const combo = app.find('#languageCombo');
+
+    combo.simulate('change', { target: { value: 'csharp' } });
+
+    const aceEditor = app.find(AceEditor);
+
+    expect(aceEditor.props().mode).toBe('csharp');
+});
+
+

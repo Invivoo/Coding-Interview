@@ -25,6 +25,7 @@ export class App extends React.Component<AppProps, AppState> {
           <div id="selector" style={{ top: '11px', position: 'absolute', right: '0px'}} >
             <label>Select language: 
               <select 
+                id="languageCombo"
                 value={this.state.language} 
                 style={{ 'marginLeft': '11px' }} 
                 onChange={(event) => this.setState({language: event.target.value})}
