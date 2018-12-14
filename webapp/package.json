@@ -6,6 +6,7 @@
   "author": "XComponent <dev@xcomponent.com> (http://www.xcomponent.com)",
   "dependencies": {
     "react": "^16.2.0",
+    "react-ace": "^6.2.0",
     "react-dom": "^16.2.0",
     "react-intl": "^2.4.0",
     "react-redux": "^5.0.6",

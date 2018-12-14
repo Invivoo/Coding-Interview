@@ -1,20 +1,31 @@
 import * as React from 'react';
 import './App.css';
-import { FormattedMessage } from 'react-intl';
+import AceEditor from 'react-ace';
 
-const logo = require('./logo.svg');
+import 'brace/mode/java';
+import 'brace/theme/github';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to <FormattedMessage id="app.title" /></h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <AceEditor
+          mode="java"
+          theme="github"
+          name="code"
+          fontSize={20}
+          showPrintMargin={true}
+          showGutter={true}
+          highlightActiveLine={true}
+          editorProps={{$blockScrolling: true}}
+          setOptions={{
+                enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true,
+                enableSnippets: false,
+                showLineNumbers: true,
+                tabSize: 2,
+          }}
+        />,
       </div>
     );
   }
