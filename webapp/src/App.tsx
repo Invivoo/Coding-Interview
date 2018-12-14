@@ -5,19 +5,35 @@ import AceEditor from 'react-ace';
 import 'brace/mode/java';
 import 'brace/theme/github';
 
-class App extends React.Component {
+interface AppProps {
+}
+
+interface AppState {
+  language: string;
+}
+
+class App extends React.Component<AppProps, AppState> {
+  constructor(props: AppProps) {
+    super(props);
+    this.state = {language: 'javascript'};
+  }
+
   render() {
     return (
       <div className="App">
         <div id="topSection" style={{ height: '44px' }}>
           <div id="selector" style={{ top: '11px', position: 'absolute', right: '0px'}} >
             <label>Select language: 
-              <select value="js" style={{ 'marginLeft': '11px' }}>
-                <option value="cs">C#</option>
+              <select 
+                value={this.state.language} 
+                style={{ 'marginLeft': '11px' }} 
+                onChange={(event) => this.setState({language: event.target.value})}
+              >
+                <option value="csharp">C#</option>
                 <option value="java">Java</option>
-                <option value="py">Python</option>
-                <option value="js">JavaScript</option>
-                <option value="ts">TypeScript</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="typescript">TypeScript</option>
               </select>
             </label>
           </div>
