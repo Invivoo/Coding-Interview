@@ -39,7 +39,7 @@ export class App extends React.Component<AppProps, AppState> {
           </div>
         </div>
         <AceEditor
-          mode="java"
+          mode={this.state.language}
           theme="github"
           name="code"
           fontSize={20}
