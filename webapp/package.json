@@ -31,7 +31,6 @@
     "@types/react-router-redux": "^5.0.11",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "jest": "^23.6.0",
     "jest-transform-css": "^2.0.0",
     "react-scripts-ts": "2.13.0",
     "ts-jest": "^23.10.5",
