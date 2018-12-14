@@ -9,6 +9,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div id="topSection" style={{ height: '44px' }}>
+          <div id="selector" style={{ top: '11px', position: 'absolute', right: '0px'}} >
+            <label>Select language: </label>
+            <input name="language" list="languages" type="text" />
+            <datalist id="languages">
+              <option> C# </option>
+              <option> Java </option>
+              <option> Python </option>
+              <option> JavaScript </option>
+              <option> TypeScript </option>
+            </datalist>
+          </div>
+        </div>
         <AceEditor
           mode="java"
           theme="github"
