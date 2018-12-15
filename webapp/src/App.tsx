@@ -26,13 +26,12 @@ export class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <div className="App">
-        <div id="topSection" style={{ height: '44px' }}>
-          <div id="selector" style={{ top: '11px', position: 'absolute', right: '0px'}} >
+        <div className="editorTopSection">
+          <div className="editorLanguageSelector">
             <label>Select language: 
               <select 
-                id="languageCombo"
+                className="languageSelectionCombo"
                 value={this.state.language} 
-                style={{ 'marginLeft': '11px' }} 
                 onChange={(event) => this.setState({language: event.target.value})}
               >
                 <option value="csharp">C#</option>

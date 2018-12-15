@@ -17,7 +17,7 @@ test('ace mode mirrors selected language', () => {
 
 test('selection change updates editor mode', () => {
     const app = shallow(<App />);
-    const combo = app.find('#languageCombo');
+    const combo = app.find('.languageSelectionCombo');
 
     combo.simulate('change', { target: { value: 'csharp' } });
 
