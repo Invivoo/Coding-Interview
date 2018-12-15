@@ -15,12 +15,13 @@ export interface AppProps {
 
 export interface AppState {
   language: string;
+  sourceCode: string;
 }
 
 export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
-    this.state = {language: 'javascript'};
+    this.state = {language: 'javascript', sourceCode: ''};
   }
 
   render() {
@@ -57,9 +58,11 @@ export class App extends React.Component<AppProps, AppState> {
           style={{position: 'absolute'}}
           enableBasicAutocompletion={true}
           enableLiveAutocompletion={true}
+          value={this.state.sourceCode}
+          onChange={(value) => this.setState({ sourceCode: value })}
           setOptions={{
-                showLineNumbers: true,
-                tabSize: 2,
+            showLineNumbers: true,
+            tabSize: 2,
           }}
         />,
       </div>
