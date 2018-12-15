@@ -12,5 +12,4 @@ install:
 - yarn install
 - yarn build
 script:
-- cd webapp
 - yarn run test --silent
