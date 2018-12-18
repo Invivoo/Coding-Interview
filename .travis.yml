@@ -8,6 +8,7 @@ cache:
   directories:
   - node_modules
 install:
+- cd webapp
 - yarn install
 - yarn build
 script:

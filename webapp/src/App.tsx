@@ -1,20 +1,70 @@
 import * as React from 'react';
 import './App.css';
-import { FormattedMessage } from 'react-intl';
+import AceEditor from 'react-ace';
 
-const logo = require('./logo.svg');
+import 'brace/mode/java';
+import 'brace/mode/csharp';
+import 'brace/mode/python';
+import 'brace/mode/javascript';
+import 'brace/mode/typescript';
+import 'brace/theme/github';
+import 'brace/ext/language_tools';
 
-class App extends React.Component {
+export interface AppProps {
+}
+
+export interface AppState {
+  language: string;
+  sourceCode: string;
+}
+
+export class App extends React.Component<AppProps, AppState> {
+  constructor(props: AppProps) {
+    super(props);
+    this.state = {language: 'javascript', sourceCode: ''};
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to <FormattedMessage id="app.title" /></h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <div className="editorTopSection">
+          <div className="editorLanguageSelector">
+            <label>Select language: 
+              <select 
+                className="languageSelectionCombo"
+                value={this.state.language} 
+                onChange={(event) => this.setState({language: event.target.value})}
+              >
+                <option value="csharp">C#</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="typescript">TypeScript</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <AceEditor
+          mode={this.state.language}
+          theme="github"
+          name="code"
+          fontSize={20}
+          showPrintMargin={true}
+          showGutter={true}
+          highlightActiveLine={true}
+          editorProps={{$blockScrolling: true}}
+          width="100%"
+          height="100%"
+          style={{position: 'absolute'}}
+          enableBasicAutocompletion={true}
+          enableLiveAutocompletion={true}
+          value={this.state.sourceCode}
+          onChange={(value) => this.setState({ sourceCode: value })}
+          setOptions={{
+            showLineNumbers: true,
+            tabSize: 2,
+          }}
+        />,
       </div>
     );
   }
